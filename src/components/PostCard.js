@@ -52,7 +52,7 @@ export default function PostCard({
         </Button>
         {user && user.username === username && (
           <Button
-            as="dev"
+            as="div"
             color="red"
             onClick={() => console.log("delete post")}
           >
