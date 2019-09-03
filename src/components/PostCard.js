@@ -9,9 +9,6 @@ export default function PostCard({
   post: { body, createdAt, id, username, likes, comments }
 }) {
   const { user } = useContext(AuthContext);
-  function likePost() {
-    console.log("post liked!");
-  }
 
   function commentPost() {
     console.log("post commented!");
@@ -31,12 +28,8 @@ export default function PostCard({
       </Card.Content>
       <Card.Content extra>
         <LikeButton user={user} post={{ id, likes }} />
-        <Label as="a" basic color="blue" pointing="left">
-          {likes.length}
-        </Label>
 
         <Button
-          as="div"
           labelPosition="right"
           onClick={commentPost}
           as={Link}
@@ -46,7 +39,7 @@ export default function PostCard({
             <Icon name="comment" />
             Comment
           </Button>
-          <Label as="a" basic color="blue" pointing="left">
+          <Label basic color="blue" pointing="left">
             {comments.length}
           </Label>
         </Button>
