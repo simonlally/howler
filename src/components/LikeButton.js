@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
-import { Icon, Button } from "semantic-ui-react";
+import { Icon, Button, Label } from "semantic-ui-react";
 
 export default function LikeButton({ user, post: { id, likes } }) {
   const [liked, setLiked] = useState(false);
@@ -33,7 +33,14 @@ export default function LikeButton({ user, post: { id, likes } }) {
     </Button>
   );
 
-  return likeButton;
+  return (
+    <Button as="div" labelPosition="right" onClick={likePost}>
+      {likeButton}
+      <Label basic color="blue" pointing="left">
+        {likes.length}
+      </Label>
+    </Button>
+  );
 }
 
 const LIKE_POST = gql`
