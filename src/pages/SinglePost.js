@@ -60,10 +60,22 @@ export default function SinglePost(props) {
                   </Label>
                 </Button>
                 {user && user.username === username && (
-                  <DeleteButton postId={id} />
+                  <DeleteButton postId={id} callback={deletePostCallBack} />
                 )}
               </Card.Content>
             </Card>
+            {comments.map(com => (
+              <Card fluid key={com.id}>
+                <Card.Content>
+                  <Card.Header>{com.username}</Card.Header>
+                  <Card.Meta>{moment(com.createdAt).fromNow()}</Card.Meta>
+                  <Card.Description>{com.body}</Card.Description>
+                  {user && user.username === com.username && (
+                    <DeleteButton postId={id} commentId={com.id} />
+                  )}
+                </Card.Content>
+              </Card>
+            ))}
           </Grid.Column>
         </Grid.Row>
       </Grid>
