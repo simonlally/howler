@@ -18,7 +18,7 @@ export default function DeleteButton({ postId }) {
 
   return (
     <>
-      <Button as="div" color="red" onClick={() => console.log("delete post")}>
+      <Button as="div" color="red" onClick={() => setConfirmOpen(true)}>
         <Icon name="trash" />
       </Button>
       <Confirm
@@ -31,7 +31,7 @@ export default function DeleteButton({ postId }) {
 }
 
 const DELETE_POST = gql`
-    mutation deletePost($postId: ID!) {
-        deletePost($postId: postId)
-    }
+  mutation deletePost($postId: ID!) {
+    deletePost(postId: $postId)
+  }
 `;
