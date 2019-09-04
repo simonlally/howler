@@ -7,7 +7,7 @@ import moment from "moment";
 import LikeButton from "../components/LikeButton";
 import DeleteButton from "../components/DeleteButton";
 
-import { Grid, Card, Button } from "semantic-ui-react";
+import { Grid, Card, Button, Icon, Label } from "semantic-ui-react";
 
 export default function SinglePost(props) {
   // get the postID from the URL
@@ -47,6 +47,21 @@ export default function SinglePost(props) {
               </Card.Content>
               <Card.Content extra>
                 <LikeButton user={user} post={{ id, likes }} />
+                <Button
+                  as="div"
+                  labelPosition="right"
+                  onClick={() => console.log("commented!")}
+                >
+                  <Button basic color="green">
+                    <Icon name="comment" />
+                  </Button>
+                  <Label basic color="green" pointing="left">
+                    {comments.length}
+                  </Label>
+                </Button>
+                {user && user.username === username && (
+                  <DeleteButton postId={id} />
+                )}
               </Card.Content>
             </Card>
           </Grid.Column>
