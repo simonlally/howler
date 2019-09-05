@@ -8,25 +8,39 @@ import { GET_POSTS_QUERY } from "../util/graphql";
 export default function DeleteButton({ postId, commentId, callback }) {
   const [confirmOpen, setConfirmOpen] = useState(false);
 
-  const mutation = commentId ? DELETE_COMMENT : DELETE_POST;
-
-  const [deleteMutation] = useMutation(mutation, {
+  const [deletePost] = useMutation(DELETE_POST, {
     update(proxy) {
       // are you sure you want to delete this post?
       setConfirmOpen(false);
 
-      if (!commentId) {
-        const data = proxy.readQuery({
-          query: GET_POSTS_QUERY
-        });
+      const data = proxy.readQuery({
+        query: GET_POSTS_QUERY
+      });
 
-        data.getPosts = data.getPosts.filter(p => p.id !== postId);
-        proxy.writeQuery({ query: GET_POSTS_QUERY, data });
-      }
+      data.getPosts = data.getPosts.filter(p => p.id !== postId);
+      proxy.writeQuery({ query: GET_POSTS_QUERY, data });
 
       if (callback) {
         callback();
       }
+    },
+    variables: {
+      postId
+    }
+  });
+
+  const [deleteComment] = useMutation(DELETE_COMMENT, {
+    update(proxy) {
+      setConfirmOpen(false);
+
+      const data = proxy.readQuery({
+        query: GET_POSTS_QUERY
+      });
+
+      data.getPosts = data.getPosts.filter(p => p.id !== postId);
+      proxy.writeQuery({ query: GET_POSTS_QUERY, data });
+
+      if (callback) callback();
     },
     variables: {
       postId,
@@ -42,7 +56,7 @@ export default function DeleteButton({ postId, commentId, callback }) {
       <Confirm
         open={confirmOpen}
         onCancel={() => setConfirmOpen(false)}
-        onConfirm={deleteMutation}
+        onConfirm={commentId ? deleteComment : deletePost}
       />
     </>
   );
@@ -55,12 +69,11 @@ const DELETE_POST = gql`
 `;
 
 const DELETE_COMMENT = gql`
-  mutation deleteComment($postId: ID!, $commendId: ID!) {
-    deleteComment(postId: $postId, commentId: $commendId) {
+  mutation deleteComment($postId: ID!, $commentId: ID!) {
+    deleteComment(postId: $postId, commentId: $commentId) {
       id
       comments {
         id
-        username
         body
         createdAt
       }

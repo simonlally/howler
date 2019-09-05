@@ -50,6 +50,7 @@ export default function Login(props) {
           label="Password"
           placeholder="Password..."
           name="password"
+          type="password"
           value={values.password}
           onChange={onChange}
         />
