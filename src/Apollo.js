@@ -16,7 +16,7 @@ const authLink = setContext(() => {
 });
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:5000"
+  uri: "https://howler-backend.herokuapp.com"
 });
 
 const client = new ApolloClient({
