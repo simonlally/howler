@@ -40,14 +40,6 @@ export default function MenuBar() {
         as={Link}
         to="/register"
       />
-
-      <Menu.Item
-        name="friends"
-        active={activeItem === "friends"}
-        onClick={handleItemClick}
-        as={Link}
-        to="/friends"
-      />
       <Menu.Menu position="right">
         <Menu.Item
           name="login"
