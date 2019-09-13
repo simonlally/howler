@@ -34,7 +34,7 @@ export default function MenuBar() {
         to="/"
       />
       <Menu.Item
-        name="register"
+        name="Sign Up"
         active={activeItem === "register"}
         onClick={handleItemClick}
         as={Link}
