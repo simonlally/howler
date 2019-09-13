@@ -57,6 +57,7 @@ export default function Register(props) {
           label="Password"
           placeholder="Password..."
           name="password"
+          type="password"
           value={values.password}
           onChange={onChange}
         />
@@ -64,6 +65,7 @@ export default function Register(props) {
           label="Confirm Password"
           placeholder="Confirm Password..."
           name="confirmPassword"
+          type="password"
           value={values.confirmPassword}
           onChange={onChange}
         />
