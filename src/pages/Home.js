@@ -5,6 +5,7 @@ import { AuthContext } from "../context/auth";
 
 import PostCard from "../components/PostCard";
 import PostForm from "../components/PostForm";
+import Spinner from "../components/Spinner";
 import { GET_POSTS_QUERY } from "../util/graphql";
 
 export default function Home() {
@@ -27,7 +28,7 @@ export default function Home() {
           </Grid.Column>
         )}
         {loading ? (
-          <h1>Loading posts...</h1>
+          <Spinner />
         ) : (
           posts &&
           posts.map(post => (
