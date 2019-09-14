@@ -23,7 +23,7 @@ export default function Home() {
       </Grid.Row>
       <Grid.Row>
         {user && (
-          <Grid.Column>
+          <Grid.Column mobile={16} tablet={8} computer={5}>
             <PostForm />
           </Grid.Column>
         )}
@@ -32,7 +32,7 @@ export default function Home() {
         ) : (
           posts &&
           posts.map(post => (
-            <Grid.Column key={post.id}>
+            <Grid.Column key={post.id} mobile={16} tablet={8} computer={5}>
               <PostCard post={post} />
             </Grid.Column>
           ))
