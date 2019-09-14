@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useQuery } from "@apollo/react-hooks";
-import { Grid } from "semantic-ui-react";
+import { Grid, Card } from "semantic-ui-react";
 import { AuthContext } from "../context/auth";
 
 import PostCard from "../components/PostCard";
@@ -33,7 +33,9 @@ export default function Home() {
           posts &&
           posts.map(post => (
             <Grid.Column key={post.id} mobile={16} tablet={8} computer={5}>
-              <PostCard post={post} />
+              <div className="card div" style={{ marginBottom: "20px" }}>
+                <PostCard post={post} />
+              </div>
             </Grid.Column>
           ))
         )}

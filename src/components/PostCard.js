@@ -36,11 +36,11 @@ export default function PostCard({
           as={Link}
           to={`/post/${id}`}
         >
-          <Button color="green">
+          <Button color="teal">
             <Icon name="comment" />
             Comment
           </Button>
-          <Label basic color="blue" pointing="left">
+          <Label basic color="teal" pointing="left">
             {comments.length}
           </Label>
         </Button>
