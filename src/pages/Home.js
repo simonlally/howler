@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { useQuery } from "@apollo/react-hooks";
-import { Grid, Card } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import { AuthContext } from "../context/auth";
 
+import Logo from "../components/Logo";
+import howler_img from "../assets/IMG_0110.PNG";
 import PostCard from "../components/PostCard";
 import PostForm from "../components/PostForm";
 import Spinner from "../components/Spinner";
@@ -18,7 +20,10 @@ export default function Home() {
 
   return (
     <Grid columns={3}>
-      <Grid.Row>
+      <Grid.Row centered="true">
+        <Logo imgSource={howler_img} />
+      </Grid.Row>
+      <Grid.Row centered="true">
         <h1>Welcome to Howler!</h1>
       </Grid.Row>
       <Grid.Row>
