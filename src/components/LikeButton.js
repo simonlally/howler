@@ -19,22 +19,22 @@ export default function LikeButton({ user, post: { id, likes } }) {
 
   const likeButton = user ? (
     liked ? (
-      <Button compact="true" color="teal">
+      <Button color="teal">
         <Icon name="heart" />
       </Button>
     ) : (
-      <Button compact="true" color="teal" basic>
+      <Button color="teal" basic>
         <Icon name="heart" />
       </Button>
     )
   ) : (
-    <Button compact="true" as={Link} to="/login" color="teal" basic>
+    <Button as={Link} to="/login" color="teal" basic>
       <Icon name="heart" />
     </Button>
   );
 
   return (
-    <Button compact="true" as="div" labelPosition="right" onClick={likePost}>
+    <Button as="div" labelPosition="right" onClick={likePost}>
       {likeButton}
       <Label basic color="teal" pointing="left">
         {likes.length}
