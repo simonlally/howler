@@ -15,7 +15,7 @@ export default function MenuBar() {
   const menuBar = user ? (
     <Menu pointing secondary>
       <Menu.Item
-        name={user.username}
+        name={`Hi ${user.username}`}
         active={activeItem === "home"}
         as={Link}
         to="/"
