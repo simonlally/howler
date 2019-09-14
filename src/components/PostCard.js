@@ -31,12 +31,13 @@ export default function PostCard({
         <LikeButton user={user} post={{ id, likes }} />
 
         <Button
+          compact="true"
           labelPosition="right"
           onClick={commentPost}
           as={Link}
           to={`/post/${id}`}
         >
-          <Button color="teal">
+          <Button compact="true" color="teal">
             <Icon name="comment" />
             Comment
           </Button>
