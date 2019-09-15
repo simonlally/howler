@@ -98,6 +98,7 @@ export default function SinglePost(props) {
                         onChange={e => setComment(e.target.value)}
                       />
                       <button
+                        size="small"
                         type="submit"
                         className="ui button"
                         disabled={comment.trim() === ""}
