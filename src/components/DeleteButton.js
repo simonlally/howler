@@ -50,8 +50,8 @@ export default function DeleteButton({ postId, commentId, callback }) {
 
   return (
     <>
-      <Button basic="true" color="red" onClick={() => setConfirmOpen(true)}>
-        <Icon fitted="true" name="x" />
+      <Button basic color="red" onClick={() => setConfirmOpen(true)}>
+        <Icon fitted name="x" />
       </Button>
       <Confirm
         open={confirmOpen}

@@ -23,7 +23,7 @@ export default function Home() {
       <Grid.Row centered>
         <Logo imgSource={howler_img} />
       </Grid.Row>
-      <Grid.Row centered="true">
+      <Grid.Row centered>
         <Header as="h1" textAlign="center">
           Welcome to Howler!
         </Header>

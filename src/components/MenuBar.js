@@ -13,7 +13,7 @@ export default function MenuBar() {
   const handleItemClick = (e, { name }) => setActiveItem(name);
 
   const menuBar = user ? (
-    <Menu pointing secondary>
+    <Menu size="large" pointing secondary>
       <Menu.Item
         name={`Hi ${user.username}`}
         active={activeItem === "home"}
