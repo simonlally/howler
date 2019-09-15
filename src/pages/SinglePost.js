@@ -55,8 +55,7 @@ export default function SinglePost(props) {
     postMarkup = (
       <Grid centered>
         <Grid.Row>
-          <Grid.Column width={2}></Grid.Column>
-          <Grid.Column width={10}>
+          <Grid.Column centered width={12}>
             <Card fluid style={{ border: "2px solid" }}>
               <Card.Content>
                 <Card.Header>{username}</Card.Header>
