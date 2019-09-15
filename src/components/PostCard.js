@@ -13,7 +13,7 @@ export default function PostCard({
 
   return (
     <Card fluid>
-      <Card.Content>
+      <Card.Content style={{ height: "120px" }}>
         <Image
           floated="right"
           size="mini"
@@ -21,7 +21,9 @@ export default function PostCard({
         />
         <Card.Header>{username}</Card.Header>
         <Card.Meta>{moment(createdAt).fromNow()}</Card.Meta>
-        <Card.Description>{body}</Card.Description>
+        <Card.Description style={{ overflow: "auto", height: "60px" }}>
+          {body}
+        </Card.Description>
       </Card.Content>
       <Card.Content extra>
         <LikeButton user={user} post={{ id, likes }} />
