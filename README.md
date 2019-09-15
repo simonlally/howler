@@ -1,9 +1,9 @@
 # Howler
 
-[Check out an example of this project](http://https://howler-react.herokuapp.com/)
+[Check out the deployed app on Heroku](https://howler-react.herokuapp.com/)
 
-### `Requirements:`
-This project requires ```Nodejs``` and was built using ```Reactjs```.
+### `About:`
+This project requires ```Nodejs``` and was built using ```Reactjs``` and is hosted on Heroku.
 
 ### `Getting Started:`
 1.  In the root directory run the follow command to install Howler's dependencies:
