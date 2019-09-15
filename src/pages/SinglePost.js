@@ -53,7 +53,7 @@ export default function SinglePost(props) {
     const { id, body, username, createdAt, comments, likes } = getPost;
 
     postMarkup = (
-      <Grid>
+      <Grid centered>
         <Grid.Row>
           <Grid.Column width={2}></Grid.Column>
           <Grid.Column width={10}>
@@ -66,12 +66,11 @@ export default function SinglePost(props) {
               <Card.Content extra>
                 <LikeButton user={user} post={{ id, likes }} />
                 <Button
-                  compact="true"
                   as="div"
                   labelPosition="right"
                   onClick={() => console.log("commented!")}
                 >
-                  <Button compact="true" basic color="green">
+                  <Button basic color="green">
                     <Icon name="comment" />
                   </Button>
                   <Label basic color="green" pointing="left">
@@ -98,7 +97,6 @@ export default function SinglePost(props) {
                         onChange={e => setComment(e.target.value)}
                       />
                       <button
-                        compact="true"
                         type="submit"
                         className="ui button"
                         disabled={comment.trim() === ""}
