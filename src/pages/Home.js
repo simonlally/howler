@@ -42,7 +42,7 @@ export default function Home() {
         {loading ? (
           <Spinner />
         ) : (
-          posts &&
+          posts.reverse() &&
           posts.map(post => (
             <Grid.Column key={post.id} mobile={16} tablet={8} computer={5}>
               <div className="card div" style={{ marginBottom: "20px" }}>

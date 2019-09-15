@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Menu } from "semantic-ui-react";
+import { Menu, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 import { AuthContext } from "../context/auth";
@@ -47,7 +47,8 @@ export default function MenuBar() {
           onClick={handleItemClick}
           as={Link}
           to="/login"
-        />
+          icon="user"
+        ></Menu.Item>
       </Menu.Menu>
     </Menu>
   );
