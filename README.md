@@ -1,6 +1,6 @@
 # Howler
 
-[Check out the deployed app on Heroku](howler-react.herokuapp.com/)
+[Check out the deployed app on Heroku](https://howler-react.herokuapp.com/)
 
 ### `About:`
 This project requires ```Nodejs``` and was built using ```Reactjs``` and is hosted on Heroku.
