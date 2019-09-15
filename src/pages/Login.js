@@ -44,7 +44,7 @@ export default function Login(props) {
           <Logo imgSource={howler_img} />
         </Grid.Row>
         <Grid.Row>
-          <Card>
+          <Card style={{ border: "1px solid #53e2f5" }}>
             <Card.Content textAlign="left">
               <Form
                 onSubmit={onSubmit}

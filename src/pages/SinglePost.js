@@ -7,7 +7,15 @@ import moment from "moment";
 import LikeButton from "../components/LikeButton";
 import DeleteButton from "../components/DeleteButton";
 
-import { Grid, Card, Button, Icon, Label, Form } from "semantic-ui-react";
+import {
+  Grid,
+  Card,
+  Button,
+  Icon,
+  Label,
+  Form,
+  TextArea
+} from "semantic-ui-react";
 
 export default function SinglePost(props) {
   // get the postID from the URL
@@ -49,7 +57,7 @@ export default function SinglePost(props) {
         <Grid.Row>
           <Grid.Column width={2}></Grid.Column>
           <Grid.Column width={10}>
-            <Card fluid>
+            <Card fluid style={{ border: "2px solid" }}>
               <Card.Content>
                 <Card.Header>{username}</Card.Header>
                 <Card.Meta>{moment(createdAt).fromNow()}</Card.Meta>
@@ -81,7 +89,8 @@ export default function SinglePost(props) {
                   <p>Post a new comment</p>
                   <Form>
                     <div className="ui action input fluid">
-                      <input
+                      <TextArea
+                        rows={2}
                         type="text"
                         placeholder="new comment..."
                         name="comment"
@@ -95,8 +104,7 @@ export default function SinglePost(props) {
                         disabled={comment.trim() === ""}
                         onClick={submitComment}
                       >
-                        {" "}
-                        Submit{" "}
+                        Submit
                       </button>
                     </div>
                   </Form>

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useQuery } from "@apollo/react-hooks";
-import { Grid } from "semantic-ui-react";
+import { Grid, Header } from "semantic-ui-react";
 import { AuthContext } from "../context/auth";
 
 import Logo from "../components/Logo";
@@ -23,15 +23,22 @@ export default function Home() {
       <Grid.Row centered>
         <Logo imgSource={howler_img} />
       </Grid.Row>
-      <Grid.Row centered>
-        <h1>Welcome to Howler!</h1>
+      <Grid.Row centered="true">
+        <Header as="h1" textAlign="center">
+          Welcome to Howler!
+        </Header>
       </Grid.Row>
-      <Grid.Row>
+      <Grid.Row centered>
         {user && (
           <Grid.Column mobile={16} tablet={8} computer={5}>
             <PostForm />
           </Grid.Column>
         )}
+      </Grid.Row>
+      <Grid.Row centered>
+        <h4>Check out the latest howls!</h4>
+      </Grid.Row>
+      <Grid.Row>
         {loading ? (
           <Spinner />
         ) : (

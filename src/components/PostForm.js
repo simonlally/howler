@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, Card, Header } from "semantic-ui-react";
 import gql from "graphql-tag";
 import { useMutation } from "@apollo/react-hooks";
 import { GET_POSTS_QUERY } from "../util/graphql";
@@ -33,19 +33,28 @@ export default function PostForm(props) {
 
   return (
     <>
-      <Form onSubmit={onSubmit}>
-        <h2>Create a post:</h2>
-        <Form.Field>
-          <Form.Input
-            placeholder="hello!"
-            name="body"
-            onChange={onChange}
-            value={values.body}
-            error={error ? true : false}
-          />
-          <Button type="submit">submit</Button>
-        </Form.Field>
-      </Form>
+      <Card style={{ border: "1px solid #53e2f5" }} fluid>
+        <Card.Content>
+          <Form onSubmit={onSubmit}>
+            <Header as="h3" textAlign="left">
+              Post a new howl!
+            </Header>
+            <Form.Field>
+              <Form.TextArea
+                rows={2}
+                placeholder="hello!"
+                name="body"
+                onChange={onChange}
+                value={values.body}
+                error={error ? true : false}
+              />
+              <Button color="blue" type="submit">
+                submit
+              </Button>
+            </Form.Field>
+          </Form>
+        </Card.Content>
+      </Card>
       {error && (
         <div className="ui error message">
           <ul className="list">
