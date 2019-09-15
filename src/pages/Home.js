@@ -20,10 +20,10 @@ export default function Home() {
 
   return (
     <Grid columns={3}>
-      <Grid.Row centered="true">
+      <Grid.Row centered>
         <Logo imgSource={howler_img} />
       </Grid.Row>
-      <Grid.Row centered="true">
+      <Grid.Row centered>
         <h1>Welcome to Howler!</h1>
       </Grid.Row>
       <Grid.Row>
