@@ -22,6 +22,7 @@ export default function SinglePost(props) {
   const postId = props.match.params.postId;
   const { user } = useContext(AuthContext);
   const [comment, setComment] = useState("");
+  const [sorted, setSorted] = useState(false);
 
   const {
     data: { getPost }
@@ -51,6 +52,11 @@ export default function SinglePost(props) {
     postMarkup = <p>Loading...</p>;
   } else {
     const { id, body, username, createdAt, comments, likes } = getPost;
+
+    if (comments && !sorted) {
+      comments.reverse();
+      setSorted(true);
+    }
 
     postMarkup = (
       <Grid centered>
