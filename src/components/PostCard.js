@@ -11,10 +11,6 @@ export default function PostCard({
 }) {
   const { user } = useContext(AuthContext);
 
-  function commentPost() {
-    console.log("post commented!");
-  }
-
   return (
     <Card fluid>
       <Card.Content>
@@ -30,12 +26,7 @@ export default function PostCard({
       <Card.Content extra>
         <LikeButton user={user} post={{ id, likes }} />
 
-        <Button
-          labelPosition="right"
-          onClick={commentPost}
-          as={Link}
-          to={`/post/${id}`}
-        >
+        <Button labelPosition="right" as={Link} to={`/post/${id}`}>
           <Button color="teal">
             <Icon name="comment" />
             Comment
