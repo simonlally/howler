@@ -55,7 +55,7 @@ export default function SinglePost(props) {
     postMarkup = (
       <Grid centered>
         <Grid.Row>
-          <Grid.Column centered width={12}>
+          <Grid.Column width={12}>
             <Card fluid style={{ border: "2px solid" }}>
               <Card.Content>
                 <Card.Header>{username}</Card.Header>
@@ -64,11 +64,7 @@ export default function SinglePost(props) {
               </Card.Content>
               <Card.Content extra>
                 <LikeButton user={user} post={{ id, likes }} />
-                <Button
-                  as="div"
-                  labelPosition="right"
-                  onClick={() => console.log("commented!")}
-                >
+                <Button as="div" labelPosition="right">
                   <Button basic color="green">
                     <Icon name="comment" />
                   </Button>
