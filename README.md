@@ -1,6 +1,6 @@
 # Howler
 
-[Check out the deployed app on Heroku](https://howler-react.herokuapp.com/)
+[Check out the deployed app on Heroku!](https://howler-react.herokuapp.com/)  Please be patient as both the front and backend are hosted on Heroku and it may take a few minutes to initially load.
 
 ### `About:`
 This project requires ```Nodejs``` and was built using ```Reactjs``` and is hosted on Heroku.
