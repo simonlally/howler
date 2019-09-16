@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { Grid, Header } from "semantic-ui-react";
 import { AuthContext } from "../context/auth";
@@ -13,17 +13,9 @@ import { GET_POSTS_QUERY } from "../util/graphql";
 export default function Home() {
   const { user } = useContext(AuthContext);
 
-  const [sorted, setSorted] = useState(false);
+  const { loading, data } = useQuery(GET_POSTS_QUERY);
 
-  const {
-    loading,
-    data: { getPosts: posts }
-  } = useQuery(GET_POSTS_QUERY);
-
-  if (posts && !sorted) {
-    posts.reverse();
-    setSorted(true);
-  }
+  const posts = data.getPosts;
 
   return (
     <Grid columns={3}>
@@ -50,13 +42,15 @@ export default function Home() {
           <Spinner />
         ) : (
           posts &&
-          posts.map(post => (
-            <Grid.Column key={post.id} mobile={16} tablet={8} computer={5}>
-              <div className="card div" style={{ marginBottom: "20px" }}>
-                <PostCard post={post} />
-              </div>
-            </Grid.Column>
-          ))
+          posts
+            .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+            .map(post => (
+              <Grid.Column key={post.id} mobile={16} tablet={8} computer={5}>
+                <div className="card div" style={{ marginBottom: "20px" }}>
+                  <PostCard post={post} />
+                </div>
+              </Grid.Column>
+            ))
         )}
       </Grid.Row>
     </Grid>
