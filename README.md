@@ -1,13 +1,15 @@
 # Howler
 
-### `About`
+### About
 [Check out the deployed app on Heroku!](https://howler-react.herokuapp.com/)  Please be patient as both the front and backend are hosted on Heroku and it may take a few minutes to initially load.
 [Check out the repo for the backend here](https://github.com/simonlally/mongo-graphql)
 
-### `Required`
-This project requires ```Nodejs```, was built using ```Reactjs``` and is hosted on Heroku.
+Howler is a social media platform where users post, like, and comment on "howls."  The frontend is build with: [Reactjs](https://github.com/facebook/react), [Semantic-UI](https://github.com/Semantic-Org/Semantic-UI) for styling, and [GraphQL](https://github.com/graphql/graphql-js) to interface with the [Howler API](https://github.com/simonlally/mongo-graphql).  Authentication is handled using a JWT stored in local storage.  
 
-### `Getting Started`
+### Requirements
+This project requires ```Nodejs```
+
+### Getting Started
 1.  In the root directory run the follow command to install Howler's dependencies:
       ```npm install```.
       
@@ -15,4 +17,7 @@ This project requires ```Nodejs```, was built using ```Reactjs``` and is hosted 
 
 3.  Your default browser should open and redirect to ```localhost:3000```.
 
-### `Features to add in the future`
+### Future Implemenations
+- Image storage: users can change their personal avatars as well as add pictures to posts.
+- Add search and sort feature for howls
+- Add tags / categories to howls
