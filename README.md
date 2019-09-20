@@ -7,7 +7,7 @@
 Howler is a social media platform where users post, like, and comment on "howls."  The frontend is built with: [Reactjs](https://github.com/facebook/react), [Semantic-UI](https://github.com/Semantic-Org/Semantic-UI) for styling, and [GraphQL](https://github.com/graphql/graphql-js) to interface with the [Howler API](https://github.com/simonlally/mongo-graphql).  Authentication is handled using a JWT stored in local storage.  
 
 ### Requirements
-This project requires ```Nodejs```.
+This project requires [Nodejs](https://github.com/nodejs).
 
 ### Getting Started
 1.  In the root directory run the follow command to install Howler's dependencies:
