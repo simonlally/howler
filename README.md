@@ -2,12 +2,12 @@
 
 ### About
 [Check out the deployed app on Heroku!](https://howler-react.herokuapp.com/)  Please be patient as both the front and backend are hosted on Heroku and it may take a few minutes to initially load.
-[Check out the repo for the backend here](https://github.com/simonlally/mongo-graphql)
+[Check out the repo for the backend here](https://github.com/simonlally/mongo-graphql).
 
-Howler is a social media platform where users post, like, and comment on "howls."  The frontend is build with: [Reactjs](https://github.com/facebook/react), [Semantic-UI](https://github.com/Semantic-Org/Semantic-UI) for styling, and [GraphQL](https://github.com/graphql/graphql-js) to interface with the [Howler API](https://github.com/simonlally/mongo-graphql).  Authentication is handled using a JWT stored in local storage.  
+Howler is a social media platform where users post, like, and comment on "howls."  The frontend is built with: [Reactjs](https://github.com/facebook/react), [Semantic-UI](https://github.com/Semantic-Org/Semantic-UI) for styling, and [GraphQL](https://github.com/graphql/graphql-js) to interface with the [Howler API](https://github.com/simonlally/mongo-graphql).  Authentication is handled using a JWT stored in local storage.  
 
 ### Requirements
-This project requires ```Nodejs```
+This project requires [Nodejs](https://github.com/nodejs).
 
 ### Getting Started
 1.  In the root directory run the follow command to install Howler's dependencies:
@@ -19,5 +19,5 @@ This project requires ```Nodejs```
 
 ### Future Implemenations
 - Image storage: users can change their personal avatars as well as add pictures to posts.
-- Add search and sort feature for howls
-- Add tags / categories to howls
+- Add search and sort feature for howls.
+- Add tags / categories to howls.
